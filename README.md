@@ -1,4 +1,5 @@
-###Mokyklos dienynas
+### Mokyklos dienynas
+
 Aprašymas:
 Sukurkite programą, kuri saugotų mokinių pažymius ir pateiktų statistiką.
 Reikalavimai:
