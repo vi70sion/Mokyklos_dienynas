@@ -11,6 +11,9 @@ public class Student {
         this.grades = grades;
     }
 
+    public String getName() { return name; }
+    public int[] getGrades() { return grades; }
+
     public void addGrade(int grade){
         int arraySize = grades.length;
         int[] arrayTemp = new int[arraySize + 1];
@@ -19,6 +22,14 @@ public class Student {
         }
         arrayTemp[arraySize] = grade;
         grades = arrayTemp;
+    }
+    @Override
+    public String toString(){
+        String gradesString = "";
+        for(int item: grades){
+            gradesString += Integer.toString(item) + " ";
+        }
+        return "Vardas: " + name + ", pažymiai: " + gradesString;
     }
 
 }

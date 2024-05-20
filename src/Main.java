@@ -52,11 +52,21 @@ public class Main {
 
         //spausdina visus studentus kurių vidurkis aukštesnis nei 8.5
         school.printTOP10Students();
+        System.out.println();
 
         //grąžina surikiuotą masyvą pagal order ("ASC", "DESC")
-        String order = "ASC"; // mažėjančiai- DESC
+        String order = "DESC";
         school.resortList(order);
-
+        System.out.println("Rikiavimas pagal vardą " + order + ": ");
+        for(Student item: school.arrayStudents){
+            System.out.println(item);
+        }
+        order = "ASC";
+        school.resortList(order);
+        System.out.println("Rikiavimas pagal vardą " + order + ": ");
+        for(Student item: school.arrayStudents){
+            System.out.println(item);
+        }
 
     }
 }

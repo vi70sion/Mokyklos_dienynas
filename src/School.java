@@ -66,7 +66,40 @@ public class School {
     }
 
     public void resortList(String order) {  //grąžina surikiuotą masyvą pagal order ("ASC", "DESC")
-
+        boolean swapped;
+        int n = arrayStudents.length;
+        switch (order){
+            case "ASC":
+                do {
+                    swapped = false;
+                    for (int i = 1; i < n; i++) {
+                        if (arrayStudents[i - 1].getName().compareTo(arrayStudents[i].getName()) > 0) {
+                            Student studTemp = new Student(arrayStudents[i - 1].getName(), arrayStudents[i - 1].getGrades());
+                            arrayStudents[i - 1] = arrayStudents[i];
+                            arrayStudents[i] = studTemp;
+                            swapped = true;
+                        }
+                    }
+                    n--;
+                } while (swapped);
+                break;
+            case "DESC":
+                do {
+                    swapped = false;
+                    for (int i = 1; i < n; i++) {
+                        if (arrayStudents[i - 1].getName().compareTo(arrayStudents[i].getName()) < 0) {
+                            Student studTemp = new Student(arrayStudents[i - 1].getName(), arrayStudents[i - 1].getGrades());
+                            arrayStudents[i - 1] = arrayStudents[i];
+                            arrayStudents[i] = studTemp;
+                            swapped = true;
+                        }
+                    }
+                    n--;
+                } while (swapped);
+                break;
+            default:
+                System.out.println("Neteisingas įvedimas.");
+                break;
+        }
     }
-
 }
